@@ -1,14 +1,11 @@
-from __future__ import absolute_import, unicode_literals
+#from __future__ import absolute_import, unicode_literals
 from django.core.mail import send_mail
-#from coursera_house.celery import task
+from celery.decorators import task
 from coursera_house.core.views import *
 from coursera_house.core.models import Setting
 from coursera_house.settings import *
 
-#import schedule
-#import time
-
-#@task()
+@task()
 def smart_home_manager():
     """
     Опрашиваю сервер, сравниваю значения с теми, которые мне нужны

@@ -1,15 +1,3 @@
-# from core.tasks import smart_home_manager
-# import time
-# import schedule
-#
-# schedule.every(10).seconds.do(smart_home_manager)
-#
-# while True:
-#     print("a")
-#     schedule.run_pending()
-#     time.sleep(1)
-
-
 from __future__ import absolute_import, unicode_literals
 import os
 import django
