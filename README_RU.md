@@ -18,9 +18,11 @@ Docker
 В проекте созданы файлы для запуска приложения в докере
 
 .. code-block:: bash
+    
     $ docker-compose build
     
 .. code-block:: bash
+    
     $ docker-compose up -d
 
 
