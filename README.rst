@@ -1,7 +1,7 @@
-Coursera House
+Smart House
 ==============
-
-Это шаблон курсового проекта от преподавателей курса.
+Project was made as a final task for Coursera course.
+And later it was improved with some additional features.
 
 
 Установка
@@ -32,8 +32,6 @@ Coursera House
 
     $ python manage.py migrate
 
-И приступайте к разработке.
-
 
 Запуск
 ------
@@ -44,13 +42,10 @@ Coursera House
 
 Она запускается как celery -A coursera_house.celery worker -l info -B
 
-Celery использует Redis как брокер, инструкция по установке Redis: https://redis.io/topics/quickstart
-
+Celery использует Redis как брокер
 
 Тестирование
 ------------
-
-
 Для запуска тестов выполните команду
 
 .. code-block:: bash

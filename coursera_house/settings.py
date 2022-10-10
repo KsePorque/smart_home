@@ -125,14 +125,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 SMART_HOME_ACCESS_TOKEN = os.getenv('SMART_HOME_ACCESS_TOKEN')
-SMART_HOME_API_URL = os.getenv('SMART_HOME_API_URL')
+SMART_HOME_API_URL = os.getenv('SMART_HOME_API_URL', 'http://smarthome.webpython.graders.eldf.ru/api/user.controller')
 EMAIL_HOST  = os.getenv('EMAIL_HOST')
 EMAIL_PORT  = os.getenv('EMAIL_PORT')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_RECEPIENT  = os.getenv('EMAIL_RECEPIENT')
 
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL','redis://127.0.0.1:5555')
+CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'redis://127.0.0.1:5555') #6397
+CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout':3600}
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'

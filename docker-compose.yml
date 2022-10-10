@@ -1,0 +1,53 @@
+version: '3'
+
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8080
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    depends_on:
+      - migration
+    networks:
+      - smart_house_net
+
+
+  migration:
+    build: .
+    command: python manage.py migrate --noinput
+    volumes:
+      - .:/app
+    networks:
+      - smart_house_net
+
+  redis:
+    image: redis
+    ports:
+      - 5555:6379
+    expose:
+      - 5555
+    networks:
+      - smart_house_net
+
+
+  worker:
+    build: .
+    command: ['celery', '-A', 'coursera_house.celery', 'worker', '-l', 'info', '-B']
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=rpc://  #redis://redis:6379/1
+      - CELERY_BROKER_TRANSPORT_OPTIONS={'visibility_timeout':3600}
+    depends_on:
+      - redis
+      - web
+    networks:
+      - smart_house_net
+
+networks:
+  smart_house_net:
+    name: smart_house_network
+
+
