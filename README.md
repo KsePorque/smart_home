@@ -29,7 +29,7 @@ Project contains docker files to run application in containers
 After this is done the network with several containers will be established
 
 The main page of this service has the panel to control parameters of the house, such as hot water temperature, room temperature and lights: http://localhost:8080<br>
-Automatic sensors data checks and turning the devicas on/off is implemented using celery
+Automatic checks of sensors' data and turning on/off the devices is implemented using celery
 
 
 Installation via pipenv
