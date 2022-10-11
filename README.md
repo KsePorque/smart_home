@@ -3,7 +3,7 @@ Smart House
 Project was made as a final task for the coursera course<br>
 <strong>Task</strong>: to implement the operational logic of smart house. <br>
 The Smart House has approximately 20 sensors, that show what devices are on (washing machine, boiler, air conditioning, etc). 
-The implemented logic should control the smart house. For example, turn off devices if smoke is detected, turn on boiler for heating water, curtains closure/opening for automatic control over room illumination.
+The implemented logic should control the smart house. For example, turn off devices if smoke is detected, turn on boiler for heating water, close/open curtains for automatic control over room illumination.
 <br><br> 
 
 Before running
